@@ -1,6 +1,7 @@
 import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
 public class NoNullArrayList<T> extends ArrayList<T> {
+
   public boolean add(T element){
     if (element == null) {
       throw new IllegalArgumentException("Cannot add null");
@@ -24,5 +25,11 @@ public class NoNullArrayList<T> extends ArrayList<T> {
     else {
       return(super.set(index, element));
     }
+  }
+  public NoNullArrayList() {
+    new ArrayList();
+  }
+  public NoNullArrayList(int startingCapacity) {
+    new ArrayList(startingCapacity);
   }
 }
